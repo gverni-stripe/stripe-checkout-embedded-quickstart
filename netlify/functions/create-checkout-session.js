@@ -1,33 +1,31 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, {
-  // apiVersion: '2020-08-27',
-  // appInfo: { // For sample support and debugging, not required for production:
-  //   name: "stripe-samples/accept-a-payment/payment-element",
-  //   version: "0.0.2",
-  //   url: "https://github.com/stripe-samples"
-  // }
+  appInfo: { 
+    name: "stripe-checkout-embedded-quickstart",
+    url: "https://github.com/gverni-stripe/https://github.com/gverni-stripe/stripe-checkout-embedded-quickstart"
+  }
 });
 
 const lineItems = [
   {
     price_data: {
-      unit_amount: 2099,
+      unit_amount: 1599,
       currency: 'gbp',
       product_data: {
-        name: 'Meeting Room Booking',
+        name: 'Item 1',
       },
     },
     quantity: 1,
-  },
-  {
-    price_data: {
-      unit_amount: 1099,
-      currency: 'gbp',
-      product_data: {
-        name: 'Desk Booking',
-      },
+  }, 
+  price_data: {
+    unit_amount: 2199,
+    currency: 'gbp',
+    product_data: {
+      name: 'Item 2',
     },
-    quantity: 1,
   },
+  quantity: 1,
+}, 
+
 ]
 
 exports.handler = async () => {

@@ -1,10 +1,8 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY, {
-    // apiVersion: '2020-08-27',
-    // appInfo: { // For sample support and debugging, not required for production:
-    //   name: "stripe-samples/accept-a-payment/payment-element",
-    //   version: "0.0.2",
-    //   url: "https://github.com/stripe-samples"
-    // }
+    appInfo: { 
+      name: "stripe-checkout-embedded-quickstart",
+      url: "https://github.com/gverni-stripe/https://github.com/gverni-stripe/stripe-checkout-embedded-quickstart"
+    }
   });
 
 exports.handler = async (request, context) => {
